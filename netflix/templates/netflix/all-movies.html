@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Všechny filmy | Netflix{% endblock title %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "netflix/all-movies.css" %}">
+    <link rel="stylesheet" href="{% static "netflix/includes/one-movie.css" %}">
+{% endblock css_files %}
+
+
+{% block content %}
+    <main>
+        <section class="all-movies">
+            {% for one_movie in all_movies_list %}
+                {% include "netflix/includes/one-movie.html" %}
+            {% endfor %}
+        </section>
+    </main>
+{% endblock content %}
